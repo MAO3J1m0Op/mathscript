@@ -93,8 +93,7 @@ public class Radical extends RealNumber {
     public double toDecimal () {
         
         if (!(out instanceof RealNumber && in instanceof RealNumber)) {
-            throw new IllegalArgumentException("Cannot convert a Radical with "
-                    + "nonreal components to a decimal.");
+            return Double.NaN;
         }
         
         return ((RealNumber)out).toDecimal() / ((RealNumber)in).toDecimal();

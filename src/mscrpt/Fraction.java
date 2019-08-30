@@ -107,8 +107,7 @@ public class Fraction extends RealNumber {
     public double toDecimal () {
         
         if (!(num instanceof RealNumber && den instanceof RealNumber)) {
-            throw new IllegalArgumentException("Cannot convert a Fraction with "
-                    + "nonreal components to a decimal.");
+            return Double.NaN;
         }
         
         return ((RealNumber)num).toDecimal() / ((RealNumber)den).toDecimal();
